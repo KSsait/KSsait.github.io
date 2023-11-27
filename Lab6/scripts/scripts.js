@@ -1,4 +1,4 @@
-/****************** YOUR NAME: 
+/****************** YOUR NAME: Kris Senger
 
 The instructions describe the missing logic that is needed; you will translate these into JavaScript in the places indicated.
 
@@ -11,8 +11,8 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
-
-
+let modelName = document.getElementById("model-text").innerHTML;
+let duration = document.getElementById("duration-text").innerHTML;
 
 
 /****************** helper function ******************/
@@ -27,9 +27,16 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
-
-
-
+function recalculate(){
+    let costLabel = document.getElementById("calculated-cost").innerHTML;
+    let modelName = document.getElementById("model-text").innerHTML;
+    if(modelName === "Model XYZ") {
+        costLabel = duration * 100;
+    } else if(modelName === "Model CPRG") {
+        costLabel = duration * 213;     
+    }
+    document.getElementById("calculated-cost").innerHTML = costLabel;  
+}
 
 
 /****************** model button logic ******************/
@@ -42,14 +49,21 @@ You are encouraged to use the provided naming convention for ease of review.
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-    // modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
+const modelButton = document.getElementById("model-button");
+modelButton.addEventListener("click", changeModel);
 
+function changeModel(){
+    modelName = document.getElementById("model-text").innerHTML;
 
-
-
-
+    if(modelName === "Model XYZ"){
+        document.getElementById("model-text").innerHTML = "Model CPRG";
+    } else if (modelName === "Model CPRG") {
+        document.getElementById("model-text").innerHTML = "Model XYZ";
+    }
+    recalculate();
+}
 
 
 /****************** duration button logic ******************/
@@ -65,5 +79,13 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+const durationButton = document.getElementById("duration-button");
+durationButton.addEventListener("click", changeDuration);
 
-
+function changeDuration(){
+    let durationText = document.getElementById("duration-text").innerhtml;
+    duration = prompt("How many days would you like to rent for?");
+    document.getElementById("duration-text").innerHTML = duration;
+    
+    recalculate();
+}
