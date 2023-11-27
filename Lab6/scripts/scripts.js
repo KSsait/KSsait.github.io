@@ -83,9 +83,8 @@ const durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
 
 function changeDuration(){
-    let durationText = document.getElementById("duration-text").innerhtml;
     duration = prompt("How many days would you like to rent for?");
     document.getElementById("duration-text").innerHTML = duration;
-    
+
     recalculate();
 }
