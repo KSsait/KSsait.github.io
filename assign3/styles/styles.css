@@ -13,7 +13,6 @@ You are discouraged from changing any provided CSS.
 
 */
 
-
 /************* site defaults *************/
 body {
     width: 950px;
@@ -24,7 +23,9 @@ body {
 
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
 
-
+.flex {
+    display: flex;
+}
  
 
 /************* site-wide text styling *************/
@@ -42,12 +43,46 @@ body {
         - change the cursor to pointer.
 */
 
+h1 {
+    font-size: 48px;
+    align-self: center;
+    margin: auto;
+}
 
+h2 {
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 12px;
+}
 
+.large-text {
+    font-size: 24px;
+}
 
+header, footer, .fake-button {
+    background-color: #E5AF42;
+}
 
+.fake-button {
+    line-height: 3;
+    border: 1px solid black;
+    text-align: center;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
+main a:hover, footer a:hover, #clear-button:hover {
+    text-decoration: underline;
+}
+
+.fake-button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #4278e5;
+}
 
 /************* header/footer styling *************/
 
@@ -59,10 +94,27 @@ body {
     - the footer will be 60px tall, have a font-weight of 200, and the text within will be centered vertically and horizontally.
 */
 
+header {
+    height: 150px;
+    justify-content: start;
+    margin-bottom: 25px;
+}
 
+header img {
+    height: 100px;
+    width: 100px;
+    margin: 25px 0 25px 25px;
+}
 
-
-
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    height: 100px;  /* To Do list says 60px height for footer, but screenshots show it being higher than that*/
+    font-weight: 200;
+    justify-content: center;
+    align-items: center;  
+}
 
 /************* index page *************/
 
@@ -74,9 +126,23 @@ body {
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
 
+.index img {
+    width: 300px;
+    margin: 0 0 50px 25px;
+}
 
+.index p {
+    margin-bottom: 12px;
+}
 
+.index .fake-button {
+    width: 250px;
+}
 
+.btns {
+    gap: 150px;
+    justify-content: center;
+}
 
 
 /************* bookings page *************/
@@ -93,17 +159,43 @@ body {
 
 */
 
+.booking-page {
+    margin: auto;
+    width: 600px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
 
+.day-selector {
+    gap: 20px;
+    margin-bottom: 12px;
+}
 
+.day-selector li {
+    width: 60px;
+    
+}
 
+li, .small-button {
+    border: 1px solid black;
+}
 
+.small-button {
+    padding: 5px;
+}
 
+.top-margin {
+    margin: 24px 0 12px 0;
+}
 
+#clear-button {
+    width: 200px;
+}
 
-
-
-
-
+.clicked {
+    background-color: #E5AF42;
+}
 
 /************* contact page *************/
 /* TO DO:
@@ -114,6 +206,40 @@ body {
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
 
+.contact {
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    height: 420px;
+}
 
 
+label {
+    width: 150px;
+    text-align: right;
+    margin-right: 24px;
+}
 
+input {
+    
+    width: 300px;
+}
+
+#user-message {
+    height: 150px;
+    width: 300px;
+}
+
+#submit-button, input, #user-message {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    border: 1px solid black;
+    margin-bottom: 24px;
+}
+
+#submit-button {
+    height: 60px;
+    width: 305px;
+    margin-left: 174px;
+}
