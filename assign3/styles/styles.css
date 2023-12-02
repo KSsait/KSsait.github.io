@@ -78,7 +78,7 @@ main a:hover, footer a:hover, #clear-button:hover {
     text-decoration: underline;
 }
 
-.fake-button:hover {
+.fake-button:hover, .blue-hover:hover {
     color: white;
     cursor: pointer;
     background-color: #4278e5;
