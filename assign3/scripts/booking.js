@@ -20,11 +20,11 @@ buttons.forEach(button => {
         if(button.classList.contains('clicked')) {
             button.classList.remove('clicked');
             days -= 1;
-            recalculate()        
+            recalculate();        
         } else {
             button.classList.add('clicked');
             days += 1;
-            recalculate()
+            recalculate();
         }
     });
 })
