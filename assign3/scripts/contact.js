@@ -3,7 +3,7 @@ const submitBtn = document.getElementById('submit-button');
 const contactPage = document.getElementById('contact-page');
 
 submitBtn.addEventListener('click', function(){
-    contactPage.innerHTML = '<p style="font-size:24px">Thank you for your message</p>'
-})
+    contactPage.innerHTML = '<p style="font-size:24px">Thank you for your message</p>';
+});
 // hint: you can change the style of an element by modifying the value of that element's .style.fontSize, or by updating its .classList.
 

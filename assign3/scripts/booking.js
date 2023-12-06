@@ -9,7 +9,6 @@ let days = 0;
 const buttons = document.querySelectorAll('.days');
 const clear = document.getElementById('clear-button');
 const dayType = document.querySelectorAll('.day-type');
-let totalCost = document.getElementById("calculated-cost").innerHTML;
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
@@ -27,7 +26,7 @@ buttons.forEach(button => {
             recalculate();
         }
     });
-})
+});
 
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
@@ -35,10 +34,10 @@ buttons.forEach(button => {
 clear.addEventListener('click', function(){
     buttons.forEach(button =>{
         button.classList.remove('clicked');
-        days = 0
-        recalculate()
-    })
-})
+        days = 0;
+        recalculate();
+    });
+});
 
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
@@ -47,18 +46,16 @@ clear.addEventListener('click', function(){
 dayType.forEach(type => {
     type.addEventListener('click', function(){
         if(!document.getElementById('half').classList.contains('clicked')){
-            type.classList.add('clicked')
-            document.getElementById('full').classList.remove('clicked')
-            cost = 35
-            recalculate()
+            document.getElementById('half').classList.add('clicked');
+            document.getElementById('full').classList.remove('clicked');
+            recalculate();
         } else if(!document.getElementById('full').classList.contains('clicked')){
-            type.classList.add('clicked')
-            document.getElementById('half').classList.remove('clicked')
-            cost = 20
-            recalculate()
+            document.getElementById('full').classList.add('clicked');
+            document.getElementById('half').classList.remove('clicked');
+            recalculate();
         }
-    })
-})
+    });
+});
 
 
 /********* calculate *********/
